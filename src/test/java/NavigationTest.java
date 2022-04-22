@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class NavigationTest {
@@ -12,7 +13,7 @@ public class NavigationTest {
 		driver.get("https://phptravels.com/demo/");
 		System.out.println(driver.getTitle());
 		driver.manage().window().maximize();
-
+		Assert.assertEquals(driver.getTitle(),"Demo Script Test drive - PHPTRAVELS");
 	}
 
 	@BeforeMethod
